@@ -1,0 +1,13 @@
+  .MyStyle {
+      height: 100px;
+      width: 100px;
+      background-color: yellow;
+      border: 2px solid black;
+  }
+
+  .YourStyle {
+      height: 100px;
+      width: 100px;
+      background-color: coral;
+      border: 2px solid black;
+  }

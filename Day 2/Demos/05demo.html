@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Examples for Beginners</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      .text-example {
+        color: #007bff;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .box {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        margin: 10px 0;
+        border: 2px solid #333;
+        border-radius: 10px;
+      }
+      .inline-elements span {
+        display: inline-block;
+        background-color: #ff5722;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+      }
+      .position-example {
+        position: relative;
+        background-color: #ffeb3b;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .position-example .absolute {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #673ab7;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .flex-item {
+        background-color: #03a9f4;
+        color: white;
+        padding: 20px;
+        flex: 1;
+        margin: 5px;
+        text-align: center;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Example</h1>
+      <div class="text-example">
+        This is a text example with color, font-size, font-weight, and
+        text-align properties.
+      </div>
+      <div class="box">
+        This box has background-color, color, padding, margin, border, and
+        border-radius properties.
+      </div>
+      <div class="inline-elements">
+        <span>Inline Block 1</span>
+        <span>Inline Block 2</span>
+        <span>Inline Block 3</span>
+      </div>
+      <div class="position-example">
+        This box has position: relative.
+        <div class="absolute">This box has position: absolute.</div>
+      </div>
+      <div class="flex-container">
+        <div class="flex-item">Flex Item 1</div>
+        <div class="flex-item">Flex Item 2</div>
+        <div class="flex-item">Flex Item 3</div>
+      </div>
+    </div>
+  </body>
+</html>
