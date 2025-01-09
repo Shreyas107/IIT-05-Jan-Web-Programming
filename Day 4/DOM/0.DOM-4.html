@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Over Example</title>
+  </head>
+  <body>
+    <h1>Hover over the Box</h1>
+    <div
+      id="hover-box"
+      style="width: 200px; height: 200px; background-color: lightgray"
+    >
+      Hover over me!
+    </div>
+    <p id="hover-message">Mouse is not over the box.</p>
+
+    <script>
+      const hoverBox = document.getElementById("hover-box");
+      hoverBox.addEventListener("mouseover", () => {
+        document.getElementById("hover-message").innerHTML =
+          "Mouse is over the box!";
+      });
+      hoverBox.addEventListener("mouseout", () => {
+        document.getElementById("hover-message").innerText =
+          "Mouse is not over the box.";
+      });
+    </script>
+  </body>
+</html>

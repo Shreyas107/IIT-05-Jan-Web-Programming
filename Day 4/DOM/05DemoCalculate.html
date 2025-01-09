@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Demo Calculate</title>
+  </head>
+  <body>
+    <center>
+      <table style="width: 400px">
+        <tr>
+          <td style="width: 100px">X</td>
+          <td><input type="text" id="txtX" /></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td><input type="text" id="txtY" /></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <input type="button" value="Show Result" onclick="Add()" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div
+              id="divResult"
+              style="
+                background-color: coral;
+                color: white;
+                width: 300px;
+                height: 30px;
+              "
+            ></div>
+          </td>
+        </tr>
+      </table>
+    </center>
+
+    <script>
+      function Add() {
+        var refToTxtX = document.getElementById("txtX");
+        var refToTxtY = document.getElementById("txtY");
+        var refToDivResult = document.getElementById("divResult");
+
+        var x = parseInt(refToTxtX.value);
+        var y = parseInt(refToTxtY.value);
+        var result = x + y;
+
+        refToDivResult.innerText = result;
+      }
+    </script>
+  </body>
+</html>

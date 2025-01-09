@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="height: 300px; width: 300px; background-color: yellow"
+      id="myDiv"
+    ></div>
+
+    <br />
+    <input type="button" value="Click Me" onclick="DoChange()" />
+
+    <script>
+      function DoChange() {
+        var refToMyDiv = document.getElementById("myDiv");
+        refToMyDiv.style.backgroundColor = "Red";
+      }
+    </script>
+  </body>
+</html>

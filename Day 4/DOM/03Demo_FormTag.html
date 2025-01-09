@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form Tag Demo</title>
+  </head>
+  <body>
+    <!-- <form method="GET" action="somecode.jsp"> -->
+    <form method="POST" action="somecode.jsp">
+      <center>
+        <table>
+          <tr>
+            <td>Username</td>
+            <td>
+              <input type="text" name="UserName" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>
+              <input
+                type="password"
+                name="Password"
+                required
+                pattern="^[a-z]+$"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" value=F" /> Female
+              <input type="radio" name="gender" value="M" /> Male
+              <input type="radio" name="gender" value="O" /> Other
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <select name="Country">
+                <option value="91">India</option>
+                <option value="11">USA</option>
+                <option value="44">UK</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>DOB</td>
+            <td>
+              <input type="date" name="dob" />
+            </td>
+          </tr>
+          <tr>
+            <td>AOI</td>
+            <td>
+              <select name="AOI" multiple>
+                <option value="1">Physics</option>
+                <option value="2">Computers</option>
+                <option value="3">AI</option>
+                <option value="4">Sports</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>
+              <textarea name="Address" cols="10" rows="3"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" name="acceptTerms" />
+            </td>
+            <td>
+              I accept terms and conditions.
+              <br />
+              Visit <a href="policy.html" target="__blank">Privacy Policy</a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Register" name="btn" />
+            </td>
+          </tr>
+        </table>
+      </center>
+    </form>
+  </body>
+</html>

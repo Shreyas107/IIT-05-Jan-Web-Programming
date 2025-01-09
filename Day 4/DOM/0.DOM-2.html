@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Field Example</title>
+  </head>
+  <body>
+    <h1>Type to Update</h1>
+    <input type="text" id="text-input" placeholder="Type something..." />
+    <p id="display-text">Watch this text change as you type.</p>
+
+    <script>
+      document.getElementById("text-input").addEventListener("input", () => {
+        const inputText = document.getElementById("text-input").value;
+        document.getElementById("display-text").innerText = inputText;
+      });
+    </script>
+  </body>
+</html>

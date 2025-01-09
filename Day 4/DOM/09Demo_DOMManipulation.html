@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="myImage" src="image2.jfif"
+      onmouseover="DoChange()"
+      onmouseout="DoChangeBack()"
+    ></div>
+
+    <script>
+      function DoChange() {
+        var refTomyImage = document.getElementById("myImage");
+        refTomyImage.src = "image1.png";
+      }
+
+      function DoChangeBack() {
+      var refTomyImage = document.getElementById("myImage");
+        refTomyImage.src = "image2.jfif";
+      }
+    </script>
+  </body>
+</html>

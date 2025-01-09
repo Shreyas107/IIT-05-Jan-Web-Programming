@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="height: 300px; width: 300px; background-color: yellow"
+      id="myDiv"
+      onmouseover="DoChange()"
+      onmouseout="DoChangeBack()"
+    ></div>
+
+    <script>
+      function DoChange() {
+        var refToMyDiv = document.getElementById("myDiv");
+        refToMyDiv.style.backgroundColor = "Red";
+      }
+
+      function DoChangeBack() {
+        var refToMyDiv = document.getElementById("myDiv");
+        refToMyDiv.style.backgroundColor = "Yellow";
+      }
+    </script>
+  </body>
+</html>

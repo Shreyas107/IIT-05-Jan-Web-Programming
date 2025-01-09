@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    Name: <input type="text" id="txtName" placeholder="eg. Mahesh" /> <br />
+    <input type="button" value="Click Me" onclick="Print()" />
+    <br />
+    <!-- <input type="text" id="txtMessage" /> -->
+    <div id="txtMessage" style="color: red"></div>
+    <script>
+      debugger;
+      function Print() {
+        debugger;
+        var refTotxtName = document.getElementById("txtName");
+        var refTotxtMessage = document.getElementById("txtMessage");
+        //refTotxtMessage.value = "HI " + refTotxtName.value;
+        refTotxtMessage.innerText = "HI " + refTotxtName.value;
+      }
+
+      //   Print();
+    </script>
+  </body>
+</html>
