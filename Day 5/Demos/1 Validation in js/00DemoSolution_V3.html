@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Demo Solution</title>
+  </head>
+  <body>
+    Name: <input type="text" id="txtName" />
+    <div id="divErrorForName" style="color: red"></div>
+    <br />
+    Address: <input type="text" id="txtAddress" />
+    <div id="divErrorForAddress" style="color: red"></div>
+    <br />
+    <input type="button" value="Click Me" onclick="DoValidate()" />
+    <hr />
+
+    <!-- In this, we have created a new js file which contains the defination the validation function     -->
+    <script src="Validation.js"></script>
+    <script>
+      function DoValidate() {
+        debugger;
+        ValidateForEmpty("txtName", "divErrorForName", "Name is required");
+
+        ValidateForEmpty(
+          "txtAddress",
+          "divErrorForAddress",
+          "Address is required"
+        );
+      }
+    </script>
+  </body>
+</html>

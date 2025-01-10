@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Test</title>
+    <body>
+      <center>
+        <table style="width: 500px">
+          <tr>
+            <td>Name</td>
+            <td>
+              <input type="text" id="txtName" />
+            </td>
+            <td>
+              <div id="divName" style="color: red"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>
+              <input type="text" id="txtAge" />
+            </td>
+            <td>
+              <div id="divAge" style="color: red"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                value="Register"
+                onclick="DoRegister()"
+                id="btn"
+              />
+            </td>
+          </tr>
+        </table>
+      </center>
+      <script>
+        function IsEmpty(idOfControlToCheckForEmpty) {
+          var refToControl = document.getElementById(
+            idOfControlToCheckForEmpty
+          );
+
+          if (refToControl.value == "") {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        function DoRegister() {
+          //Name EMPTY Validation
+          var refToDivName = document.getElementById("divName");
+          var refToDivAge = document.getElementById("divAge");
+          var refToTxtName = document.getElementById("txtName");
+
+          var isNameBoxEmpty = IsEmpty("txtName");
+          if (isNameBoxEmpty) {
+            refToDivName.innerText = "Name can not be empty!";
+          } else {
+            refToDivName.innerText = "";
+            console.log("Hello " + refToTxtName.value);
+          }
+
+          //Age EMPTY, Number, Range Validation
+          var refToDivAge = document.getElementById("divAge");
+          var refToTxtAge = document.getElementById("txtAge");
+
+          var isAgeBoxEmpty = IsEmpty("txtAge");
+          if (isAgeBoxEmpty) {
+            refToDivAge.innerText = "Age can not be empty!";
+          } else {
+            refToDivAge.innerText = "";
+
+            if (isNaN(refToTxtAge.value)) {
+              //if character is present
+              refToDivAge.innerText = "Age should be a number.";
+            } else {
+              //if Number is present
+              refToDivAge.innerText = "";
+
+              //Check for range
+              var age = parseInt(refToTxtAge.value);
+
+              if (age < 60 && age > 18) {
+                console.log("Age is " + age);
+                refToDivAge.innerText = "";
+              } else {
+                refToDivAge.innerText = "Age shoud be between 18 - 60";
+              }
+            }
+          }
+        }
+      </script>
+    </body>
+  </head>
+</html>

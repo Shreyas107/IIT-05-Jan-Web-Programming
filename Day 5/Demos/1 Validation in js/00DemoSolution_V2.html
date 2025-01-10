@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Demo Solution</title>
+  </head>
+  <body>
+    Name: <input type="text" id="txtName" />
+    <div id="divErrorForName" style="color: red"></div>
+    <br />
+    Address: <input type="text" id="txtAddress" />
+    <div id="divErrorForAddress" style="color: red"></div>
+    <br />
+    <input type="button" value="Click Me" onclick="DoValidate()" />
+    <hr />
+
+    <script>
+      function ValidateForEmpty(InputControlID, DivControlID, ErrorMessage) {
+        var refToInputControl = document.getElementById(InputControlID);
+        var refToDivError = document.getElementById(DivControlID);
+
+        if (refToInputControl.value == "") {
+          refToDivError.innerText = ErrorMessage;
+        } else {
+          refToDivError.innerText = "";
+          console.log(refToInputControl.value);
+        }
+      }
+
+      // creating a function DoValidate() which will be called when we need to check for validation
+      function DoValidate() {
+        debugger;
+        ValidateForEmpty("txtName", "divErrorForName", "Name is required");
+
+        ValidateForEmpty(
+          "txtAddress",
+          "divErrorForAddress",
+          "Address is required"
+        );
+      }
+    </script>
+  </body>
+</html>

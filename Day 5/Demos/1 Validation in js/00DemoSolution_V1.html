@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Demo Solution</title>
+  </head>
+  <body>
+    Name: <input type="text" id="txtName" />
+    <div id="divErrorForName" style="color: red"></div>
+    <br />
+    Address: <input type="text" id="txtAddress" />
+    <div id="divErrorForAddress" style="color: red"></div>
+    <br />
+    <input type="button" value="Click Me" onclick="DoValidate()" />
+    <hr />
+
+    <script>
+      //debugger;
+      function DoValidate() {
+        // direct Validation Empty check for Name.......................
+        var refTotxtName = document.getElementById("txtName");
+        var refTodivErrorForName = document.getElementById("divErrorForName");
+
+        if (refTotxtName.value == "") {
+          refTodivErrorForName.innerText = "Name is required.";
+        } else {
+          refTodivErrorForName.innerText = "";
+          console.log("Hello " + refTotxtName.value);
+        }
+        //-------------------------------------------------------
+
+        // direct Validation Empty check for Address.......................
+        var refTotxtAddress = document.getElementById("txtAddress");
+        var refTodivErrorForAddress =
+          document.getElementById("divErrorForAddress");
+
+        if (refTotxtAddress.value == "") {
+          refTodivErrorForAddress.innerText = "Address is required.";
+        } else {
+          refTodivErrorForAddress.innerText = "";
+          console.log(refTotxtAddress.value);
+        }
+        //------------------------------------------------------
+      }
+    </script>
+  </body>
+</html>
