@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Storage Example</title>
+  </head>
+  <body>
+    <input type="text" id="sessionInput" placeholder="Enter something" />
+    <button onclick="saveToSession()">Save to Session Storage</button>
+    <button onclick="loadFromSession()">Load from Session Storage</button>
+    <button onclick="clearSession()">Clear Session Storage</button>
+
+    <p id="sessionOutput"></p>
+
+    <script>
+      function saveToSession() {
+        let input = document.getElementById("sessionInput").value;
+        sessionStorage.setItem("data", input);
+        alert("Saved to session storage");
+      }
+
+      function loadFromSession() {
+        let data = sessionStorage.getItem("data");
+        document.getElementById("sessionOutput").innerText = data
+          ? `Stored Value: ${data}`
+          : "No data found";
+      }
+
+      function clearSession() {
+        sessionStorage.clear();
+        alert("Session storage cleared");
+        document.getElementById("sessionOutput").innerText = "";
+      }
+    </script>
+  </body>
+</html>

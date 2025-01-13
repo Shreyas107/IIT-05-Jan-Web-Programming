@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>CALL STACK Example</h2>
+    <script>
+      // sync nature of js
+      // CALL STACK:  The call stack is a data structure used by JavaScript to keep track of function calls.
+      // It operates in a Last In, First Out (LIFO) manner,
+      // meaning the last function called is the first to be executed and completed.
+
+      function firstFunction() {
+        console.log("First Function");
+        secondFunction();
+        console.log("First Function End");
+      }
+
+      function secondFunction() {
+        console.log("Second Function");
+        thirdFunction();
+        console.log("Second Function End");
+      }
+
+      function thirdFunction() {
+        console.log("Third Function");
+      }
+
+      firstFunction();
+
+      //////////////////////////////////////
+
+      //   async
+      //   When dealing with asynchronous operations,
+      //   the call stack interacts with other components like the Web APIs, event loop, and task queues.
+
+      // console.log("Start");
+
+      // // Macro task
+      // setTimeout(() => {
+      //   console.log("Timeout callback");
+      // }, 1000);
+
+      // // Micro task
+      // Promise.resolve().then(() => {
+      //   console.log("Promise callback");
+      // });
+
+      // console.log("End");
+    </script>
+  </body>
+</html>

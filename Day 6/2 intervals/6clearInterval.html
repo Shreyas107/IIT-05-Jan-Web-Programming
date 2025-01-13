@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container">
+    <h1 class="mt-5 mb-4">Countdown Timer</h1>
+    <p id="countdown">Countdown: <span id="timer">10</span> seconds</p>
+    <button id="startBtn" class="btn btn-primary mr-2">Start Timer</button>
+    <button id="stopBtn" class="btn btn-danger">Stop Timer</button>
+
+    <script>
+      // Initialize countdown value
+      let countdownValue = 10;
+      let intervalId;
+
+      // Function to update and display the countdown
+      const updateCountdown = () => {
+        countdownValue--;
+        document.getElementById("timer").innerText = countdownValue;
+        if (countdownValue === 0) {
+          clearInterval(intervalId); // Clear the interval when countdown reaches 0
+          alert("Countdown complete!");
+        }
+      };
+
+      // Event listener for start button
+      document.getElementById("startBtn").addEventListener("click", () => {
+        // Start the countdown timer
+        intervalId = setInterval(updateCountdown, 1000);
+      });
+
+      // Event listener for stop button
+      document.getElementById("stopBtn").addEventListener("click", () => {
+        // Stop the countdown timer
+        clearInterval(intervalId);
+        alert("Countdown stopped!");
+      });
+    </script>
+  </body>
+</html>

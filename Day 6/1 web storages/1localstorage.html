@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage Example</title>
+  </head>
+  <body>
+    <input type="text" id="localInput" placeholder="Enter something" />
+    <button onclick="saveToLocal()">Save to Local Storage</button>
+    <button onclick="loadFromLocal()">Load from Local Storage</button>
+    <button onclick="clearLocal()">Clear Local Storage</button>
+
+    <p id="localOutput"></p>
+
+    <script>
+      function saveToLocal() {
+        let input = document.getElementById("localInput").value;
+        localStorage.setItem("data", input);
+        alert("Saved to local storage");
+      }
+
+      function loadFromLocal() {
+        let data = localStorage.getItem("data");
+        document.getElementById("localOutput").innerText = data
+          ? `Stored Value: ${data}`
+          : "No data found";
+      }
+
+      function clearLocal() {
+        localStorage.clear();
+        alert("Local storage cleared");
+      }
+    </script>
+  </body>
+</html>

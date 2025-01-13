@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval Example</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+      #clock {
+        font-size: 3em;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">00:00:00</div>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        document.getElementById(
+          "clock"
+        ).innerText = `${hours}:${minutes}:${seconds}`;
+      }
+
+      // Update the clock every second (1000 milliseconds)
+      setInterval(updateClock, 1000);
+
+      // Initial call to display the clock immediately
+      updateClock();
+    </script>
+  </body>
+</html>

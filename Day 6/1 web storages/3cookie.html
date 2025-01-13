@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies Example</title>
+  </head>
+  <body>
+    <input type="text" id="cookieInput" placeholder="Enter something" />
+    <button
+      onclick="setCookie('data', document.getElementById('cookieInput').value, 7)"
+    >
+      Set Cookie
+    </button>
+    <button onclick="displayCookie('data')">Get Cookie</button>
+    <button onclick="deleteCookie('data')">Delete Cookie</button>
+
+    <p id="cookieOutput"></p>
+
+    <script>
+      function setCookie(name, value, days) {
+        let date = new Date();
+
+        // The getTime() method returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        alert("Cookie set");
+      }
+
+      function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0)
+            return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+
+      function displayCookie(name) {
+        let value = getCookie(name);
+        document.getElementById("cookieOutput").innerText = value
+          ? `Stored Value: ${value}`
+          : "No data found";
+      }
+
+      function deleteCookie(name) {
+        document.cookie =
+          name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        alert("Cookie deleted");
+        displayCookie(name);
+      }
+    </script>
+  </body>
+</html>

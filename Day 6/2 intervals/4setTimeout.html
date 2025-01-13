@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout Example</title>
+  </head>
+  <body>
+    <div>
+      <button id="showMessageBtn">Show Message After 3 Seconds</button>
+    </div>
+    <div
+      id="message"
+      style="margin-top: 20px; font-size: 20px; color: green"
+    ></div>
+
+    <script>
+      document
+        .getElementById("showMessageBtn")
+        .addEventListener("click", () => {
+          setTimeout(() => {
+            document.getElementById("message").innerText =
+              "Hello, this is your delayed message!";
+          }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+  </body>
+</html>
