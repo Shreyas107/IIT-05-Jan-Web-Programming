@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default Parameters Example</title>
+  </head>
+  <body>
+    <h1>Default Parameters Example</h1>
+
+    <script>
+      // Function with default parameters
+      let calculateArea = function (height = 100, width = 50) {
+        return height * width;
+      };
+
+      // Calling the function without arguments
+      console.log(`Area with default parameters: ${calculateArea()}`);
+
+      // Calling the function with arguments
+      console.log(
+        `Area with specified parameters (200, 75): ${calculateArea(200, 75)}`
+      );
+
+      // Calling the function with one argument
+      console.log(
+        `Area with specified height (150) and default width: ${calculateArea(
+          150
+        )}`
+      );
+
+      // Calling the function with one argument and default height
+      console.log(
+        `Area with default height and specified width (80): ${calculateArea(
+          undefined,
+          80
+        )}`
+      );
+    </script>
+  </body>
+</html>

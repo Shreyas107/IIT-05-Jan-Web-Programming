@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Data Example with XMLHttpRequest</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Center align content */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+
+      /* Shadow for container */
+      .container-shadow {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container container-shadow p-5">
+      <h1 class="mb-4 text-center">Fetch Data Example with XMLHttpRequest</h1>
+
+      <button id="fetchWithXHR" class="btn btn-primary d-block mx-auto mb-4">
+        Fetch Data with XMLHttpRequest
+      </button>
+
+      <div id="dataContainer"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("fetchWithXHR")
+        .addEventListener("click", fetchDataWithXHR);
+
+      function fetchDataWithXHR() {
+        // Create a new XMLHttpRequest object
+        var xhr = new XMLHttpRequest(); // readyState = 0
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              const users = JSON.parse(xhr.responseText);
+              debugger;
+              displayUsernames(users);
+            } else {
+              console.error("Request failed:", xhr.status);
+            }
+          } else {
+            console.log("Ready state:", xhr.readyState);
+          }
+        };
+
+        // Open a new HTTP request
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true); // readyState = 1
+
+        // Send the request
+        xhr.send(); // readyState = 2, 3, 4
+      }
+
+      function displayUsernames(users) {
+        const userList = users
+          .map((user) => `<li class="list-group-item">${user.name}</li>`)
+          .join("");
+        document.getElementById(
+          "dataContainer"
+        ).innerHTML = `<ul class="list-group">${userList}</ul>`;
+      }
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

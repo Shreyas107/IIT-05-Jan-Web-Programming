@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="Get Data" onclick="GetDataFromServer()" />
+    <hr />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <script>
+      function GetDataFromServer() {
+        var helper = new XMLHttpRequest(); //readyState = 0
+
+        helper.onreadystatechange = () => {
+          //debugger;
+          //console.log(helper.readyState);
+
+          if (helper.readyState == 4 && helper.status == 200) {
+            //Successfull response
+            //debugger;
+            var dataInStringFormat = helper.responseText;
+
+            var data = JSON.parse(dataInStringFormat);
+            var refToTBody = document.getElementById("tableBody");
+            //debugger;
+
+            refToTBody.innerHTML = "";
+            for (i = 0; i < data.length; i++) {
+              //debugger;
+              var element = data[i];
+              //console.log(element.name + element.address);
+
+              var row = `<tr>
+                          <td>${element.no}</td>
+                          <td>${element.name}</td>
+                          <td>${element.address}</td>
+                        </tr>`;
+              refToTBody.innerHTML = refToTBody.innerHTML + row;
+            }
+          }
+        };
+
+        helper.open("GET", "http://127.0.0.1:5500/data.json"); //packet is created here. //readyState = 1
+
+        helper.send(); //packet is sent over network. //readyState = 2
+
+        //after this readystate = 3 ; means we are waiting
+      }
+    </script>
+  </body>
+</html>

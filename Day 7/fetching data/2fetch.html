@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Usernames</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 300px;
+      }
+
+      li {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      li:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fetch Usernames Example</h1>
+
+    <button id="fetchButton">Fetch Usernames</button>
+
+    <ul id="userList"></ul>
+
+    <script>
+      // console.log("====================================");
+      // console.log(fetch("https://jsonplaceholder.typicode.com/users"));
+
+      // // fetch("https://jsonplaceholder.typicode.com/users").then((res) => {
+      // //   console.log(res.json());
+      // // });
+
+      // console.log("====================================");
+
+      document
+        .getElementById("fetchButton")
+        .addEventListener("click", fetchUsernames);
+
+      function fetchUsernames() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => {
+            debugger;
+            if (response.status != 200) {
+              throw new Error("Network response was not ok");
+            }
+
+            return response.json();
+          })
+          .then((data) => {
+            debugger;
+            const userList = document.getElementById("userList");
+            userList.innerHTML = "";
+            data.forEach((user) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = user.username;
+              userList.appendChild(listItem);
+            });
+          })
+          .catch((error) => {
+            console.error(
+              "There was a problem with the fetch operation:",
+              error
+            );
+          });
+      }
+    </script>
+  </body>
+</html>

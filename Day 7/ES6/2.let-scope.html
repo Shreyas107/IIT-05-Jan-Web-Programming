@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Example: Scope of let</title>
+  </head>
+  <body>
+    <h1>JavaScript Example: Scope of let</h1>
+    <script>
+      // Global scope
+      let globalVariable = "I am a global variable";
+
+      function testScope() {
+        // Function scope
+        let functionVariable = "I am a function variable";
+
+        if (true) {
+          // Block scope
+          let blockVariable = "I am a block variable";
+          console.log(blockVariable);
+        }
+
+        // Trying to access block-scoped variable outside the block
+        // console.log(blockVariable);
+
+        console.log(functionVariable);
+      }
+
+      testScope();
+
+      // console.log(functionVariable);
+
+      console.log(globalVariable);
+
+      // Example of 'let' in a loop
+      for (let i = 0; i < 3; i++) {
+        console.log(i); // Output: 0, 1, 2
+      }
+
+      // console.log(i);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Books Details</title>
+  </head>
+  <body>
+    <center>
+      Search Book: <input type="text" id="txtBook" />
+      <input type="button" value="Find Books" onclick="GetBooks()" />
+      <hr />
+      <table border="1" style="width: 800px; text-align: center">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Publisher</th>
+            <th>Published Date</th>
+            <th>Cover Photo</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </center>
+
+    <script>
+      function GetBooks() {
+        var refTotxtBook = document.getElementById("txtBook");
+
+        var bookDetailsToSearch = refTotxtBook.value;
+        debugger;
+        var helper = new XMLHttpRequest();
+        helper.onreadystatechange = () => {
+          if (helper.readyState == 4 && helper.status == 200) {
+            debugger;
+            var booksDataInString = helper.responseText;
+            var alldataInJSON = JSON.parse(booksDataInString);
+            var books = alldataInJSON.items;
+
+            debugger;
+
+            var refToTableBody = document.getElementById("tableBody");
+            refToTableBody.innerHTML = "";
+
+            for (i = 0; i < books.length; i++) {
+              var book = books[i];
+              var row = `<tr>
+                            <td>${book.volumeInfo.title}</td>
+                            <td>${book.volumeInfo.authors}</td>
+                            <td>${book.volumeInfo.publisher}</td>
+                            <td>${book.volumeInfo.publishedDate}</td>
+                            <td>
+                            <img
+                                src="${book.volumeInfo.imageLinks.thumbnail}"
+                                style="height: 100px; width: 100px"
+                            />
+                            </td>
+                        </tr>`;
+              refToTableBody.innerHTML = refToTableBody.innerHTML + row;
+            }
+          }
+        };
+        helper.open(
+          "GET",
+          "https://www.googleapis.com/books/v1/volumes?q=" + bookDetailsToSearch
+        );
+        helper.send();
+      }
+    </script>
+  </body>
+</html>

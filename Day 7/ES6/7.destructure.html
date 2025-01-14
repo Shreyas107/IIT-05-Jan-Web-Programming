@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring Assignment Example</title>
+  </head>
+  <body>
+    <h1>Destructuring Assignment Example</h1>
+
+    <script>
+      // Array Destructuring
+      let fruits = ["Apple", "Banana"];
+
+      //   console.log(fruits[0]);
+      let [a, b] = fruits; // Array destructuring assignment
+      console.log(a, b);
+
+      // Object Destructuring
+      let person = { name: "Peter", age: 28 };
+      let { name, age } = person; // Object destructuring assignment
+      console.log(name, age); // Output: Peter 28
+    </script>
+  </body>
+</html>

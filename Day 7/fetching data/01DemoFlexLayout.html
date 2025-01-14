@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <input type="button" value="Click Me" onclick="DoSomething()" />
+      <div id="myDiv" style="opacity: 0">
+        <img src="200w.webp" style="height: 50px; width: 50px" />
+      </div>
+      <hr />
+      <div
+        id="myContainer"
+        style="
+          border: black 1px solid;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        "
+      ></div>
+    </center>
+    <script>
+      function DoSomething() {
+        var refTomyDiv = document.getElementById("myDiv");
+        var refTomyContainer = document.getElementById("myContainer");
+
+        var helper = new XMLHttpRequest();
+        refTomyDiv.style.opacity = "1";
+
+        helper.onreadystatechange = () => {
+          //debugger;
+          //console.log(helper.readyState);
+          if (helper.readyState == 4 && helper.status == 200) {
+            window.setTimeout(() => {
+              refTomyDiv.innerHTML = "<h1>Data received.!</h1>";
+
+              var dataInStringFormat = helper.responseText;
+              var dataInJSONFormat = JSON.parse(dataInStringFormat);
+              var allUsers = dataInJSONFormat.data;
+
+              for (i = 0; i < allUsers.length; i++) {
+                var user = allUsers[i];
+                var userSpecificDiv = `<div
+                    style="
+                      height: 230px;
+                      width: 230px;
+                      border: red 1px solid;
+                      padding: 2px;
+                    "
+                  >
+                    <img src="${user.avatar}" />
+                    <h2>${user.first_name} ${" "} ${user.last_name}</h2>
+                    <h6>${user.email}</h6>
+                  </div>`;
+                refTomyContainer.innerHTML =
+                  refTomyContainer.innerHTML + userSpecificDiv;
+              }
+            }, 5000);
+          }
+        };
+        helper.open("GET", "https://reqres.in/api/users");
+        helper.send();
+      }
+    </script>
+  </body>
+</html>

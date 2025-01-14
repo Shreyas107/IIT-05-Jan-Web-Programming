@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Example</title>
+  </head>
+  <body>
+    <h1>JavaScript Example: let and const</h1>
+    <script>
+      // Using 'let' to declare a variable
+      let i = 10;
+      console.log(i); // Output: 10
+
+      // Using 'const' to declare a constant
+      const PI = 3.14;
+      console.log(PI); // Output: 3.14
+
+      // Changing the value of 'let' variable
+      i = 20;
+      console.log(i); // Output: 20
+
+      // Trying to change the value of 'const' variable will result in an error
+      // Uncommenting the following line will throw an error
+      // PI = 3.14159;
+
+      // Additional examples showing 'let' in a block scope
+      if (true) {
+        let x = 5;
+        console.log(x); // Output: 5
+      }
+      // Uncommenting the following line will throw an error because 'x' is not defined outside the block
+      // console.log(x);
+
+      // Showing 'const' in a block scope
+      if (true) {
+        const y = 10;
+        console.log(y); // Output: 10
+      }
+      // Uncommenting the following line will throw an error because 'y' is not defined outside the block
+      // console.log(y);
+    </script>
+  </body>
+</html>

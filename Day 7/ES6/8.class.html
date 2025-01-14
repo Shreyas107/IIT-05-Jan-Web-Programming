@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Example</title>
+  </head>
+  <body>
+    <h1>Class Example</h1>
+
+    <script>
+      class UserProfile {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        getName() {
+          console.log(`The Full-Name is ${this.firstName} ${this.lastName}`);
+        }
+      }
+
+      let obj = new UserProfile("John", "Smith");
+      obj.getName(); // Output: The Full-Name is John Smith
+    </script>
+  </body>
+</html>
