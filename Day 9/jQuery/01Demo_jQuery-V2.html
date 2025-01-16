@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+    Name: <input type="text" id="txtName" />
+    <br />
+    <!-- <button onclick="DoSomething()" id="btn"> -->
+    <button id="btn">
+      Click Me
+      <!-- <input type="text" value="hi!!" /> -->
+    </button>
+    <br />
+    <div
+      id="myDiv"
+      style="height: 50px; width: 200px; background-color: orange"
+    ></div>
+
+    <!-- <script>
+      debugger;
+      jQuery("#btn").click(DoSomething);
+
+      function DoSomething() {
+        var dataFromTextBox = $("#txtName").val();
+        $("#myDiv").html(dataFromTextBox);
+      }
+    </script> -->
+
+    <!-- <script>
+      debugger;
+      jQuery("#btn").click(function () {
+        $("#myDiv").html($("#txtName").val());
+      });
+    </script> -->
+
+    <script>
+      $("#btn").click(function () {
+        $("#myDiv").html($("#txtName").val());
+      });
+    </script>
+  </body>
+</html>

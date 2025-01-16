@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+    <center>
+      <table
+        id="myTable"
+        style="height: 500px; width: 500px; text-align: center"
+        border="1"
+      >
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Mahesh</td>
+          <td>Pune</td>
+        </tr>
+      </table>
+    </center>
+
+    <script>
+      $("tr").mouseover(function () {
+        $(this).css("background-color", "orange");
+      });
+
+      $("tr").mouseout(function () {
+        $(this).css("background-color", "white");
+      });
+
+      $("tr").click(function () {
+        $(this).css("background-color", "green");
+        $(this).unbind("mouseover mouseout");
+      });
+    </script>
+  </body>
+</html>

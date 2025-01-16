@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery text() Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="textElement">This is the original text.</div>
+    <button id="getText">Get Text</button>
+    <button id="setText">Set Text</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#getText").click(function () {
+          alert("Text content: " + $("#textElement").text());
+        });
+
+        $("#setText").click(function () {
+          $("#textElement").text("This is the new text.");
+        });
+      });
+    </script>
+  </body>
+</html>

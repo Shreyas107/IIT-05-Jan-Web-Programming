@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <style>
+      .A {
+        height: 100px;
+        width: 100px;
+        background-color: orange;
+        border: 1px solid black;
+      }
+
+      .B {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <button id="btn">Click Me</button>
+      <br />
+      <hr />
+      <div id="div1" class="A" title="pune">DIV 1</div>
+      <br />
+      <div id="div2" class="B" title="panji">DIV 2</div>
+      <br />
+      <div id="div3" class="A" title="mumbai">DIV 3</div>
+      <br />
+      <div id="div4" class="B" title="chennai">DIV 4</div>
+      <br />
+      <section id="mysection" class="A">SECION 1</section>
+      <br /><br /><br />
+      <script>
+        $("#btn").click(function () {
+          //Select by ID #
+          $("#div1").css("background-color", "red");
+          //-----------------------------------------------------
+          //Select by TagName
+          // $("div").css("background-color", "red");
+          //-----------------------------------------------------
+          //Select by Class Name
+          //   $(".A").css("background-color", "red");
+          //-----------------------------------------------------
+          //Select by TagName + Class Name
+          //$("div.A").css("background-color", "red");
+          //OR---------------------------------------------------
+          //   $("div")
+          //     .filter(".A")
+          //     // .filter("div[title^='p']")
+          //     .css("background-color", "red");
+          //-----------------------------------------------------
+          //Select by Attribute Values
+          //$("div[title='panji']").css("background-color", "red");
+          //-----------------------------------------------------
+          //Select by Attribute Values with wild card check
+          //Title Starts with 'p'
+          //$("div[title^='p']").css("background-color", "red");
+          //-----------------------------------------------------
+          //Title Ends with 'i'
+          //$("div[title$='i']").css("background-color", "red");
+          //-----------------------------------------------------
+          //Title Contains with 'n'
+          //$("div[title*='n']").css("background-color", "red");
+        });
+      </script>
+    </center>
+  </body>
+</html>

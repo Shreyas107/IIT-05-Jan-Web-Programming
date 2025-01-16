@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      .Style1 {
+        background-color: aquamarine;
+      }
+      .Style2 {
+        background-color: pink;
+      }
+    </style>
+    <script src="jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+    Name : <input type="text" id="txtName" class="Style1" /> <br />
+    Address: <input type="text" id="txtAddress" class="Style1" /> <br />
+    Details:
+    <textarea id="Details" cols="30" rows="10" class="Style2"></textarea> <br />
+    <div id="myDiv" class="Style1">This is here for no reason.</div>
+    <br />
+    <h1>This is also here for no reason</h1>
+    <br />
+    <input
+      type="button"
+      id="btn"
+      value="Click Me"
+      class="Style2"
+      onclick="ChangeUI()"
+    />
+
+    <script>
+      function ChangeUI() {
+        debugger;
+        // var arrayOfInputs = document.getElementsByTagName("input");
+        // for (i = 0; i < arrayOfInputs.length; i++) {
+        //   var inputControl = arrayOfInputs[i];
+        //   if (inputControl.type == "text") {
+        //     inputControl.style.backgroundColor = "red";
+        //   }
+        // }
+
+        // var arrayOfInputs = document.getElementsByClassName("Style1");
+        // for (i = 0; i < arrayOfInputs.length; i++) {
+        //   var control = arrayOfInputs[i];
+        //   if (control.tagName == "INPUT") {
+        //     control.style.backgroundColor = "red";
+        //   }
+        // }
+
+        //jQuery("input").css("backgroundColor", "red");
+        // jQuery("input.Style1").css("backgroundColor", "red");
+
+        // $("input.Style1").css("backgroundColor", "red");
+
+        // $("input.Style1").css("backgroundColor", "red");
+        // $("input.Style1").css("width", "400px");
+
+        $("input.Style1").css({
+          backgroundColor: "red",
+          width: "400px",
+        });
+      }
+    </script>
+  </body>
+</html>

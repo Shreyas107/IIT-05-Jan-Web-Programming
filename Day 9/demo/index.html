@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hide with JQuery</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <div id="myElement1">This is an element to be hidden.</div>
+    <button id="hideButtonJS">Hide with JavaScript</button>
+    <br />
+    <hr />
+    <br />
+    <div id="myElement2">This is an element to be hidden.</div>
+    <button id="hideButtonJQ">Hide with jQuery</button>
+
+    <!-- Javascript -->
+    <script>
+      document
+        .getElementById("hideButtonJS")
+        .addEventListener("click", function () {
+          document.getElementById("myElement1").style.display = "none";
+        });
+    </script>
+
+    <!-- jQuery -->
+    <script>
+      $(document).ready(() => {
+        $("#hideButtonJQ").click(() => {
+          $("#myElement2").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

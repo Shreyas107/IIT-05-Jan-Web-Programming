@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery html() Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="htmlElement">
+      This is the <strong>original</strong> HTML content.
+    </div>
+    <button id="getHtml">Get HTML</button>
+    <button id="setHtml">Set HTML</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#getHtml").click(function () {
+          alert("HTML content: " + $("#htmlElement").html());
+        });
+
+        $("#setHtml").click(function () {
+          $("#htmlElement").html("This is the <em>new</em> HTML content.");
+        });
+      });
+    </script>
+  </body>
+</html>
