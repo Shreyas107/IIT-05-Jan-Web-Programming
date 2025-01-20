@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Demo</title>
+  </head>
+  <body>
+    <button id="btn">Click</button>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", function () {
+        fetch("http://localhost:5000/api/users")
+          .then((response) => response.json())
+          .then((data) => {
+            debugger;
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
